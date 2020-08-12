@@ -1,0 +1,53 @@
+.indicator {
+  background-color: #07CE56;
+  border-radius: 50%;
+  height: 8px;
+  position: relative;
+  width: 8px;
+}
+.indicator::before {
+  animation: pulse 1.5s cubic-bezier(0.79, 0.01, 0.38, 0.99) infinite;
+  background-color: #07CE56;
+  border-radius: 50%;
+  content: "";
+  height: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+.indicator.danger {
+  background-color: #E24D56;
+}
+.indicator.danger::before {
+  background-color: #E24D56;
+}
+.indicator.warning {
+  background-color: #EFA51E;
+}
+.indicator.warning::before {
+  background-color: #EFA51E;
+}
+
+.timer-disabled {
+  color: #E3E8EB;
+}
+.timer-disabled .indicator {
+  background-color: #E3E8EB;
+  height: 12px;
+  width: 12px;
+}
+.timer-disabled .indicator::before {
+  display: none;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 0.3;
+    transform: scale(2.5);
+  }
+}

@@ -1,0 +1,7 @@
+<ng-container *ngIf="data">
+  <span class="table-item deep-sea-green text-normal item-1 bold"
+    [ngClass]="{'timer-disabled': disabled}">
+    <span class="indicator m-right-3" [ngClass]="data.state"></span>
+    {{ data.difference }}
+  </span>
+</ng-container>

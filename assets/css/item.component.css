@@ -1,0 +1,87 @@
+.table-header {
+  background-color: #FFF;
+  border: 2px solid #F5F6FB;
+  border-radius: 8px 8px 0 0;
+  padding: 24px 30px;
+}
+
+.table-content-header {
+  min-height: 50px;
+  width: 100%;
+}
+
+.header-title {
+  align-self: center;
+  padding: 0 10px;
+}
+
+.table-content {
+  background-color: #FFF;
+  border: 2px solid #F5F6FB;
+  border-radius: 0 0 8px 8px;
+  border-top: none;
+  padding: 0 20px;
+}
+
+.table-content-item {
+  border: 1px solid transparent;
+  border-radius: 8px;
+  cursor: pointer;
+  min-height: 50px;
+  transition: all 290ms cubic-bezier(0.79, 0.01, 0.38, 0.99);
+}
+.table-content-item:hover {
+  background-color: #E3E8EB;
+  border-color: #F5F6FB;
+  box-shadow: 0 8px 24px -12px rgba(0, 0, 0, 0.35);
+}
+.table-content-item:hover .icon-button {
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.table-item {
+  padding: 0 10px;
+}
+
+.chip {
+  background-color: rgba(96, 212, 227, 0.3);
+  border: 1px solid #60D4E3;
+  border-radius: 16px;
+  height: 25px;
+  width: 105px;
+}
+.chip.success {
+  background-color: rgba(7, 206, 86, 0.3);
+  border: 1px solid #07CE56;
+}
+.chip.danger {
+  background-color: rgba(226, 77, 86, 0.3);
+  border: 1px solid #E24D56;
+}
+.chip.warning {
+  background-color: rgba(239, 165, 30, 0.3);
+  border: 1px solid #EFA51E;
+}
+.chip.progress {
+  background-color: rgba(255, 177, 150, 0.3);
+  border: 1px solid #FFB196;
+}
+
+.paginator-button {
+  font-size: 18px;
+}
+.paginator-button:disabled {
+  color: #E7ECEF;
+  pointer-events: none;
+}
+.paginator-button:hover {
+  color: #638A99;
+}
+
+.icon-button {
+  background-color: transparent;
+  border-radius: 8px;
+  height: 30px;
+  transition: background-color 290ms cubic-bezier(0.79, 0.01, 0.38, 0.99);
+  width: 30px;
+}

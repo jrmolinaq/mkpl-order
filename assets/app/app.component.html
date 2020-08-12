@@ -1,0 +1,53 @@
+<div class="column container start">
+	<h2 class="text-big poppins bold deep-sea-green m-bottom-6">Pedidos</h2>
+	<h1 class="title-medium bold deep-sea-green m-bottom-8">Mis pedidos</h1>
+
+	<filter-tab
+	  class="m-bottom-6"
+	  [data]="tabFilters"
+	  (valueChange)="changeFilter($event)">
+	</filter-tab>
+
+	<!-- TODO se quitó asincrono de orders *ngIf="$orders | async as orders; else loader -->
+	<ng-container *ngIf="orders; else loader">
+	  
+	  <!-- TODO se quita .data *ngIf="!orders.data.length; else listOrdes" -->
+	  <empty
+		*ngIf="!orders.length; else listOrdes"
+		class="width-100"
+		[data]="emptyOrders">
+	  </empty>
+
+	  <ng-template #listOrdes>
+		  <!-- TODO se quita .data *ngFor="let order of orders.data -->
+		<div class="table-container m-bottom-3" *ngFor="let order of orders">
+		  <order-item class="column table-container" [data]="order"></order-item>
+		</div>
+		<p class="text-normal hoki m-top-2 m-bottom-7">
+		  <span class="text-normal bold hoki">
+			Los estados marcados con asterisco (**)
+			tienen alguna particularidad en la entrega.
+		  </span>
+		</p>
+		<div class="row space-between middle footer-content">
+		  
+		  <!-- TODO pendiente paginador
+		  <paginator
+			[paginator]="orders.dataPaginator"
+			(page)="currentPageChange($event)">
+		  </paginator>
+		  -->
+
+		  <!-- TODO hacer link a /order/history -->
+		  <a class="button-secondary" href="/order/history">
+			Historial de pedidos
+		  </a>
+		</div>
+	  </ng-template>
+	</ng-container>
+
+	<ng-template #loader>
+	  <img class="loader" src="/o/mkpl-order/icons/Eclipse-1s-200px.gif" alt="loader">
+	</ng-template>
+
+  </div>
