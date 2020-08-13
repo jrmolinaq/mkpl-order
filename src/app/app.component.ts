@@ -22,13 +22,14 @@ export class AppComponent implements OnInit{
 	constructor(private orderService: OrderService) { }
   
 	ngOnInit() {
-	  // TODO conseguir id de sucursal
+	  // TODO conseguir el subsidiaryId
 	  this.subsidiaryId = 5;
 	  this.getOrders();
 	}
   
 	getOrders(page = 0, status = 'all') {
-	  // TODO this.$orders = this.orderService.getOrders({ page, status, subsidiaryId: this.subsidiaryId });
+	  // TODO service
+	  // this.$orders = this.orderService.getOrders({ page, status, subsidiaryId: this.subsidiaryId });
 	  this.orders = this.orderService.getOrders2();
 	}
   

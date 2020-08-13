@@ -77,7 +77,6 @@ export class OrderService {
     let oc3: OrderContent = {id: 789, number: 123456, plate: 'ABC123', date: '2020-07-23', brand: 'Mazda', line: '2 Sedán', 
       workshop: 'Workshop3', city: 'Bogotá', status: 'accepted', products: [], externalEvent: 654987321, orders: [o1, o2, o3]};
 
-    //return  Math.random() >= 0.5? [oc1, oc2, oc3]: [];
-    return [oc1, oc2, oc3];
+    return  Math.random() >= 0.5? [oc1, oc2, oc3]: [];
   }
 }

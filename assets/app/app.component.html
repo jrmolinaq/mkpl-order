@@ -11,14 +11,14 @@
 	<!-- TODO se quitó asincrono de orders *ngIf="$orders | async as orders; else loader -->
 	<ng-container *ngIf="orders; else loader">
 	  
-	  <!-- TODO se quita .data *ngIf="!orders.data.length; else listOrdes" -->
+	  <!-- TODO se quita .data *ngIf="!orders.data.length; else listOrders" -->
 	  <empty
-		*ngIf="!orders.length; else listOrdes"
+		*ngIf="!orders.length; else listOrders"
 		class="width-100"
 		[data]="emptyOrders">
 	  </empty>
 
-	  <ng-template #listOrdes>
+	  <ng-template #listOrders>
 		  <!-- TODO se quita .data *ngFor="let order of orders.data -->
 		<div class="table-container m-bottom-3" *ngFor="let order of orders">
 		  <order-item class="column table-container" [data]="order"></order-item>
