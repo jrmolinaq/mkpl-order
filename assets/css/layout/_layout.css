@@ -2,6 +2,9 @@
   display: flex;
   flex-direction: column;
 }
+.column.start {
+  float: none;
+}
 .column.column-div {
   float: none;
 }
@@ -77,6 +80,7 @@
 .row {
   display: flex;
   flex-direction: row;
+  flex-wrap: nowrap;
 }
 .row.top {
   align-items: flex-start;

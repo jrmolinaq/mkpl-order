@@ -3,12 +3,12 @@
     Aviso - <span class="deep-sea-green text-big bold">{{data?.externalEvent}}</span>
   </span>
   <span class="text-big row middle" *ngIf="data.orders.length > maxRegister">
-    {{paginateStart + 1}}-{{paginateEnd}} de {{data.orders.length}}
-    <button class="paginator-button deep-sea-green text-big row m-left-1" type="button" (click)="prevPage()"
+    {{paginateStart + 1}} - {{paginateEnd}} de {{data.orders.length}}
+    <button class="paginator-button deep-sea-green text-big row m-left-5" type="button" (click)="prevPage()"
       [disabled]="paginateStart === 0">
       <i class="icon icon-short-left-arrow"></i>
     </button>
-    <button class="paginator-button deep-sea-green text-big row" type="button" (click)="nextPage()"
+    <button class="paginator-button deep-sea-green text-big row m-left-5" type="button" (click)="nextPage()"
       [disabled]="paginateEnd === data.orders.length">
       <i class="icon icon-short-right-arrow"></i>
     </button>
@@ -40,6 +40,8 @@
       N/A
     </span>
     <ng-template #timer>
+      <!-- TODO: buscar la forma de mostrar el timer -->
+      <span class="table-item deep-sea-green text-normal item-1">Timer</span>
       <!-- TODO
       <timer class="table-item deep-sea-green text-normal item-1 bold" [disabled]='withOutTimer'
         [date]='item.date' [stopTimer]="item.status !== 'assigned'"></timer>
@@ -54,13 +56,15 @@
     <span class="table-item deep-sea-green text-normal item-1">
       {{ item.workshop | shortLargeStrings }}
     </span>
-    <span class="table-item item-1 row middle">
-      <span class="text-normal row middle center deep-sea-green chip m-right-7" [ngClass]="states[item.status].class">
+    <span class="table-item deep-sea-green text-normal item-1 row middle space-between">
+      <span class="text-normal row middle center deep-sea-green chip m-right-5" [ngClass]="states[item.status].class">
         {{ states[item.status].text }}
       </span>
-      <button type="button" class="icon-button">
-        <i class="icon icon-long-right-arrow deep-sea-green text-big"></i>
-      </button>
+      <a href="/order/{{item.id}}">
+        <button type="button" class="icon-button row middle center">
+          <i class="icon icon-long-right-arrow deep-sea-green text-big"></i>
+        </button>
+      </a>
     </span>
   </div>
 </div>

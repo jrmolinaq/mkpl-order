@@ -69,7 +69,7 @@ export class OrderService {
     let o6: any = {id: 16, date: '2020-07-26', status: 'accepted', workshop: 'Workshop6', time: '2020-07-26', externalNoticeId: 123};
     
     let oc1: OrderContent = {id: 123, number: 123456, plate: 'ABC123', date: '2020-07-25', brand: 'Mazda', line: '2 Sedán', 
-      workshop: 'Workshop1', city: 'Bogotá', status: 'assigned', products: [], externalEvent: 123456789, orders: [o1, o2, o3]};
+      workshop: 'Workshop1', city: 'Bogotá', status: 'assigned', products: [], externalEvent: 123456789, orders: [o1, o2, o3, o4, o5, o6]};
     
     let oc2: OrderContent = {id: 456, number: 123456, plate: 'ABC123', date: '2020-07-24', brand: 'Mazda', line: '2 Sedán', 
       workshop: 'Workshop2', city: 'Bogotá', status: 'completed', products: [], externalEvent: 789456123, orders: [o1, o2, o3]};    

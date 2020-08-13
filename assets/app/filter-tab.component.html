@@ -1,4 +1,4 @@
-<div class="row middle container">
+<div class="row middle container-filter-tab">
   <div class="radio-group m-right-1" *ngFor="let radio of data">
     <input type="radio" name="filter-tab" [id]="'tab-' + radio.id" [value]="radio.id"
       [checked]="radio.checked" (change)='changeTab(radio.id)' />

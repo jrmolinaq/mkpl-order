@@ -70,3 +70,8 @@ input[type='number'] {
   border: none;
   background: 0 0;
 }
+
+a.link-simple, a.link-simple:hover {
+  text-decoration:none;
+  color: #F5F6FB;
+}
