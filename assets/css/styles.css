@@ -14,6 +14,7 @@
 @import './filter-tab.component.css';
 @import './item.component.css';
 @import './order.component.css';
+@import './paginator.component.css';
 
 html,
 body {

@@ -17,7 +17,7 @@ export class OrderService {
       .set('status', status)
       .set('page', page.toString())
       .set('limit', limit.toString());
-    return this.http.get<Order>(`rutaEndpoint/notice/subsidiary/${subsidiaryId}`, { params })
+    return this.http.get<Order>(`http://localhost:8080/o/ProviderCompraDigitalPortlet/api/notice/subsidiary/${subsidiaryId}`, { params })
       .pipe(
         map(({ content, ...dataPaginator }) => {
           return {
@@ -30,22 +30,22 @@ export class OrderService {
 
   // TODO service
   getOrder(id: any) {
-    return this.http.get<Order>(`rutaEndpoint/order/${id}`);
+    return this.http.get<Order>(`http://localhost:8080/o/ProviderCompraDigitalPortlet/api/order/detail/${id}`);
   }
 
   // TODO service
   acceptOrder(id: any, body: any) {
-    return this.http.put<OrderContent>(`rutaEndpoint/order/${id}`, body);
+    return this.http.put<OrderContent>(`http://localhost:8080/o/ProviderCompraDigitalPortlet/api/order/detail/${id}`, body);
   }
 
   // TODO service
   getCriticalOrders() {
-    return this.http.get<Order[]>(`rutaEndpoint/order/critical`);
+    return this.http.get<Order[]>(`http://localhost:8080/o/ProviderCompraDigitalPortlet/api/order/critical`);
   }
 
   // TODO service
   dispatchOrder(id: any, body: any) {
-    return this.http.put(`rutaEndpoint/order/dispatch/${id}`, body);
+    return this.http.put(`http://localhost:8080/o/ProviderCompraDigitalPortlet/api/order/dispatch/${id}`, body);
   }
 
   // TODO service
@@ -54,7 +54,7 @@ export class OrderService {
         .set('reference', reference)
         .set('amount', amount.toString());
 
-      this.http.get<any>(`rutaEndpoint/update-product/${subsidiaryId}`, { params })
+      this.http.get<any>(`http://localhost:8080/o/ProviderCompraDigitalPortlet/api/product/upd/${subsidiaryId}`, { params })
         .subscribe();
   }
 
@@ -76,6 +76,27 @@ export class OrderService {
     
     let oc3: OrderContent = {id: 789, number: 123456, plate: 'ABC123', date: '2020-07-23', brand: 'Mazda', line: '2 Sedán', 
       workshop: 'Workshop3', city: 'Bogotá', status: 'accepted', products: [], externalEvent: 654987321, orders: [o1, o2, o3]};
+
+
+
+////////////////////////////////////////////
+
+console.log('*****');
+
+const params = new HttpParams().set('url', "test-inventario.xlsx").set('id_subsidiary', "1");
+
+this.http.post<any>(`http://localhost:8080/o/SendFileMKPLPortlet/sendfile/inventory`, {
+  "url": "test-inventario.xlsx",
+  "id_subsidiary": "1"
+})
+.subscribe(
+  res => console.log('***** res ', res, ' --- ', res.message)
+);
+
+
+////////////////////////////////////////////
+
+
 
     return  Math.random() >= 0.5? [oc1, oc2, oc3]: [];
   }

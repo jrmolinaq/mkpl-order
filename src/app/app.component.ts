@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 
 import { OrderService } from './services/order.service';
 import { TAB_FILTERS, EMPTY_ORDERS } from './constants/order-constants';
@@ -14,8 +15,9 @@ declare const Liferay: any;
 export class AppComponent implements OnInit{
 	emptyOrders = EMPTY_ORDERS;
 	tabFilters = TAB_FILTERS;
-	// TODO $orders: Observable<OrderPaginator>;
-	orders: OrderContent[];
+	// TODO 
+	$orders: Observable<OrderPaginator>;
+	// orders: OrderContent[];
 	subsidiaryId: number;
 	tapId: string;
   
@@ -29,8 +31,8 @@ export class AppComponent implements OnInit{
   
 	getOrders(page = 0, status = 'all') {
 	  // TODO service
-	  // this.$orders = this.orderService.getOrders({ page, status, subsidiaryId: this.subsidiaryId });
-	  this.orders = this.orderService.getOrders2();
+	  this.$orders = this.orderService.getOrders({ page, status, subsidiaryId: this.subsidiaryId });
+	  //this.orders = this.orderService.getOrders2();
 	}
   
 	currentPageChange(page: number) {

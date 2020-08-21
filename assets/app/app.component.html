@@ -9,18 +9,18 @@
 	</filter-tab>
 
 	<!-- TODO se quitó asincrono de orders *ngIf="$orders | async as orders; else loader -->
-	<ng-container *ngIf="orders; else loader">
+	<ng-container *ngIf="$orders | async as orders; else loader">
 	  
 	  <!-- TODO se quita .data *ngIf="!orders.data.length; else listOrders" -->
 	  <empty
-		*ngIf="!orders.length; else listOrders"
+		*ngIf="!orders.data.length; else listOrders"
 		class="width-100"
 		[data]="emptyOrders">
 	  </empty>
 
 	  <ng-template #listOrders>
 		  <!-- TODO se quita .data *ngFor="let order of orders.data -->
-		<div class="table-container m-bottom-3" *ngFor="let order of orders">
+		<div class="table-container m-bottom-3" *ngFor="let order of orders.data">
 		  <order-item class="column table-container" [data]="order"></order-item>
 		</div>
 		<p class="text-normal hoki m-top-2 m-bottom-7">
@@ -31,15 +31,13 @@
 		</p>
 		<div class="row space-between middle footer-content">
 		  
-		  <!-- TODO pendiente paginador
+		  <!-- TODO pendiente paginador -->
 		  <paginator
 			[paginator]="orders.dataPaginator"
 			(page)="currentPageChange($event)">
 		  </paginator>
-		  -->
 
 		  <!-- TODO mirar si se deja así, cambié link a boton como en inventory -->
-		  <!-- TODO hacer link a /order/history -->
 		  <a class="button-primary link-simple" href="/order/history">
 			Historial de pedidos
 		  </a>

@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { EmptyComponent } from './empty.component';
 import { FilterTabComponent } from './filter-tab.component';
 import { OrderItemComponent } from './item.component';
+import { PaginatorComponent } from './paginator.component';
 
 import { ShortLargeStringsPipe } from './pipes/short-large-strings.pipe';
 
@@ -22,6 +23,7 @@ import { ShortLargeStringsPipe } from './pipes/short-large-strings.pipe';
 		EmptyComponent,
 		FilterTabComponent,
 		OrderItemComponent,
+		PaginatorComponent,
 		ShortLargeStringsPipe
 	],
 	entryComponents: [AppComponent],
