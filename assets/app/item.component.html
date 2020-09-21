@@ -1,14 +1,14 @@
-<div class="table-header row space-between middle">
+<div class="table-header row2 space-between middle">
   <span class="deep-sea-green text-big">
     Aviso - <span class="deep-sea-green text-big bold">{{data?.externalEvent}}</span>
   </span>
-  <span class="text-big row middle" *ngIf="data.orders.length > maxRegister">
+  <span class="text-big row2 middle" *ngIf="data.orders.length > maxRegister">
     {{paginateStart + 1}} - {{paginateEnd}} de {{data.orders.length}}
-    <button class="paginator-button deep-sea-green text-big row m-left-5" type="button" (click)="prevPage()"
+    <button class="paginator-button deep-sea-green text-big row2 m-left-5" type="button" (click)="prevPage()"
       [disabled]="paginateStart === 0">
       <i class="icon icon-short-left-arrow"></i>
     </button>
-    <button class="paginator-button deep-sea-green text-big row m-left-5" type="button" (click)="nextPage()"
+    <button class="paginator-button deep-sea-green text-big row2 m-left-5" type="button" (click)="nextPage()"
       [disabled]="paginateEnd === data.orders.length">
       <i class="icon icon-short-right-arrow"></i>
     </button>
@@ -16,11 +16,11 @@
 </div>
 
 <div class="table-content">
-  <div class="table-content-header row">
-    <h3 class="header-title deep-sea-green title-small-poppins bold item-1 row middle"
+  <div class="table-content-header row2">
+    <h3 class="header-title deep-sea-green title-small-poppins bold item-1 row2 middle"
       *ngFor="let header of configTable">
       {{ header.title }}
-      <div class="row middle m-left-2" *ngIf="header.sortable">
+      <div class="row2 middle m-left-2" *ngIf="header.sortable">
         <button type="button" (click)="handleOrderDown(header.id)" class="icon-sortable">
           <i class="icon icon-long-down-arrow hoki text-big"></i>
         </button>
@@ -35,7 +35,7 @@
   <div class="row table-content-item middle" *ngFor="let item of orders | slice:paginateStart:paginateEnd"
     [routerLink]="[item.id]">
   -->
-  <div class="row table-content-item middle" *ngFor="let item of orders | slice:paginateStart:paginateEnd">
+  <div class="row2 table-content-item middle" *ngFor="let item of orders | slice:paginateStart:paginateEnd">
     <span *ngIf="item.status !== 'assigned'; else timer" class="table-item deep-sea-green text-normal item-1">
       N/A
     </span>
@@ -56,12 +56,12 @@
     <span class="table-item deep-sea-green text-normal item-1">
       {{ item.workshop | shortLargeStrings }}
     </span>
-    <span class="table-item deep-sea-green text-normal item-1 row middle space-between">
-      <span class="text-normal row middle center deep-sea-green chip m-right-5" [ngClass]="states[item.status].class">
+    <span class="table-item deep-sea-green text-normal item-1 row2 middle space-between">
+      <span class="text-normal row2 middle center deep-sea-green chip m-right-5" [ngClass]="states[item.status].class">
         {{ states[item.status].text }}
       </span>
       <a href="/order/detail?id={{item.id}}">
-        <button type="button" class="icon-button row middle center">
+        <button type="button" class="icon-button row2 middle center">
           <i class="icon icon-long-right-arrow deep-sea-green text-big"></i>
         </button>
       </a>

@@ -80,7 +80,7 @@ export class OrderService {
 
 
 ////////////////////////////////////////////
-
+/*
 console.log('*****');
 
 const params = new HttpParams().set('url', "test-inventario.xlsx").set('id_subsidiary', "1");
@@ -92,8 +92,7 @@ this.http.post<any>(`http://localhost:8080/o/SendFileMKPLPortlet/sendfile/invent
 .subscribe(
   res => console.log('***** res ', res, ' --- ', res.message)
 );
-
-
+*/
 ////////////////////////////////////////////
 
 
