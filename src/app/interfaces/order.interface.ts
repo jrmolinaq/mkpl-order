@@ -28,12 +28,12 @@ export interface Order {
     orders: OrderContent[]
   }[];
   last: boolean;
-  total_pages: number;
-  total_elements: number;
+  totalPages: number;
+  totalElements: number;
   size: number;
   number: number;
   first: boolean;
-  number_of_elements: number;
+  numberOfElements: number;
 }
 
 export interface OrderData {

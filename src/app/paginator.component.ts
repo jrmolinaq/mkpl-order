@@ -41,8 +41,8 @@ export class PaginatorComponent implements OnChanges, OnInit {
   private loadData(paginator: DataPaginator) {
     const {
       numberOfElements,
-      firstPage,
-      lastPage,
+      first,
+      last,
       totalPages,
       number: pageNumber,
       totalElements,
@@ -52,14 +52,14 @@ export class PaginatorComponent implements OnChanges, OnInit {
     if (!totalElements) {
       this.lowerLimit = 0;
       this.upperLimit = 0;
-    } else if (lastPage) {
+    } else if (last) {
       this.upperLimit = totalElements;
     } else {
       this.upperLimit = pageNumber * numberOfElements + size;
     }
     this.currentPage = pageNumber;
-    this.firstPage = firstPage;
-    this.lastPage = lastPage;
+    this.firstPage = first;
+    this.lastPage = last;
     this.totalElements = totalElements;
     this.totalPages = totalPages;
   }

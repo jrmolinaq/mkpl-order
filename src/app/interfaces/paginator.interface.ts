@@ -7,10 +7,10 @@ export interface DataPaginator {
   size: number;
   totalElements: number;
   sort: string;
-  lastPage: boolean;
+  last: boolean;
   numberOfElements: number;
   totalPages: number;
-  firstPage: boolean;
+  first: boolean;
 }
 
 export interface ListResponse extends DataPaginator {

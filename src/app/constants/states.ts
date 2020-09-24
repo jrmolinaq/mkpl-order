@@ -51,7 +51,7 @@ export const STATES = {
     text: 'Entregado**'
   },
   [ORDER_STATES.ON_ROUTE]: {
-    class: 'progress',
+    class: 'progress2',
     text: 'En ruta'
   },
   [ORDER_STATES.MANUAL]: {
